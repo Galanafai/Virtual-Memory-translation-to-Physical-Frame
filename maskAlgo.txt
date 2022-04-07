@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //mask for Virtual ADDRESS EXAMPLE
+  
+  //  unsigned int pageSize = 10; //ie total level size
+    //prolly have and array of secLevelDepth
+    
+    unsigned int depth[3];
+    unsigned int firstLevelDepth  = 5; //level[0]
+    unsigned int secLevelDepth  = 8; // next level[1]
+    unsigned int thirdLevelDepth = 12;
+    depth[0] = firstLevelDepth;
+    depth[1] = secLevelDepth;
+    depth[2] = thirdLevelDepth;
+    
+    unsigned int sumOFDepth = depth[0] + depth[1] + depth[3];
+    
+    unsigned int offsetSize = 32 - sumOFDepth;
+    
+    //unsigned int levelSize =firstLevelDepth 
+
+    
+    
+    unsigned int vpn[3];
+    unsigned int VA = 0x2841F760;
+    
+    //Ex output: 4290772992  which is equal to FFC00000 which is correct and in decimal = 4290772992
+    for(int i =0; i<3; i++){
+        
+
+        unsigned int mask = 0x0;
+        //get mask dynamically
+        for(int j =0; j <depth[i];j++){
+            
+            mask = mask <<1;
+            mask = mask | 1;
+        }
+        unsigned int shift = offsetSize+ sumOFDepth - depth[i];
+        sumOFDepth = sumOFDepth - depth[i];
+        mask = mask << shift;
+    
+        std::cout<<"Mask level " << i <<" : " << std::hex<< mask << std::endl;
+        
+        unsigned int pageNum = (mask & VA) >>shift;
+        std::cout<<"vpn for level " << i <<" : "<<std::hex << pageNum << std::endl;
+
+    }
+
+    return 0;
+
+    }

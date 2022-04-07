@@ -1,0 +1,109 @@
+./pagingwithtlb trace.tr 8 12
+Page size: 4096 bytes
+Addresses processed: 224449
+Cache hits: 0, Page hits: 222566, Total hits: 222566, Misses: 1883
+Total hit percentage: 99.16%, miss percentage: 0.84%
+Frames allocated: 1883
+Bytes used:  2297592
+
+./pagingwithtlb -o bitmasks trace.tr 4 4 12
+Bitmasks
+level 0 mask F0000000
+level 1 mask 0F000000
+level 2 mask 00FFF000
+
+./pagingwithtlb -n 20 -o offset trace.tr 4 4 12
+00000760
+00000780
+00000740
+000002C0
+00000900
+00000900
+000008A0
+000000A0
+00000110
+00000160
+000004F8
+00000500
+00000520
+000005A0
+000005A0
+00000DD0
+000005E0
+00000F10
+00000620
+00000620
+
+./pagingwithtlb -n 20 -o vpn2pfn trace.tr 4 4 12
+0 0 41F -> 0
+0 0 41F -> 0
+0 0 41F -> 0
+1 1 F5E -> 1
+0 5 E78 -> 2
+1 3 270 -> 3
+0 0 475 -> 4
+0 0 4A3 -> 5
+0 0 49E -> 6
+0 0 49E -> 6
+0 0 44E -> 7
+0 0 44E -> 7
+0 7 44E -> 8
+0 0 44E -> 7
+3 8 8A6 -> 9
+0 7 44E -> 8
+0 0 44E -> 7
+0 7 3F -> A
+0 0 44E -> 7
+1 D 496 -> B
+
+./pagingwithtlb -n 20 -o virtual2physical trace.tr 24
+0041F760 -> 00000060
+0041F780 -> 00000080
+0041F740 -> 00000040
+11F5E2C0 -> 000001C0
+05E78900 -> 00000200
+13270900 -> 00000300
+004758A0 -> 000004A0
+004A30A0 -> 000005A0
+0049E110 -> 00000610
+0049E160 -> 00000660
+0044E4F8 -> 000007F8
+0044E500 -> 00000800
+0744E520 -> 00000920
+0044E5A0 -> 000008A0
+388A65A0 -> 00000AA0
+0744EDD0 -> 00000BD0
+0044E5E0 -> 000008E0
+0703FF10 -> 00000C10
+0044E620 -> 00000D20
+1D496620 -> 00000E20
+
+./pagingwithtlb -n 20 -c 2 -o v2p_tlb_pt trace.tr 4 4 12
+0041F760 -> 00000760, tlb miss, pagetable miss
+0041F780 -> 00000780, tlb hit
+0041F740 -> 00000740, tlb hit
+11F5E2C0 -> 000012C0, tlb miss, pagetable miss
+05E78900 -> 00002900, tlb miss, pagetable miss
+13270900 -> 00003900, tlb miss, pagetable miss
+004758A0 -> 000048A0, tlb miss, pagetable miss
+004A30A0 -> 000050A0, tlb miss, pagetable miss
+0049E110 -> 00006110, tlb miss, pagetable miss
+0049E160 -> 00006160, tlb hit
+0044E4F8 -> 000074F8, tlb miss, pagetable miss
+0044E500 -> 00007500, tlb hit
+0744E520 -> 00008520, tlb miss, pagetable miss
+0044E5A0 -> 000075A0, tlb hit
+388A65A0 -> 000095A0, tlb miss, pagetable miss
+0744EDD0 -> 00008DD0, tlb miss, pagetable hit
+0044E5E0 -> 000075E0, tlb miss, pagetable hit
+0703FF10 -> 0000AF10, tlb miss, pagetable miss
+0044E620 -> 00007620, tlb hit
+1D496620 -> 0000B620, tlb miss, pagetable miss
+
+./pagingwithtlb -n 100000 -o summary trace.tr 20
+Page size: 4096 bytes
+Addresses processed: 100000
+Cache hits: 0, Page hits: 98570, Total hits: 98570, Misses: 1430
+Total hit percentage: 98.57%, miss percentage: 1.43%
+Frames allocated: 1430
+Bytes used:  8388700

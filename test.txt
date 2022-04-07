@@ -1,0 +1,76 @@
+curr addr =  41f780
+0 0 41F -> 0
+curr addr =  41f740
+0 0 41F -> 0
+curr addr =  11f5e2c0
+1 1 F5E -> 1
+curr addr =  5e78900
+0 5 E78 -> 2
+curr addr =  13270900
+1 3 270 -> 3
+curr addr =  4758a0
+0 0 475 -> 4
+curr addr =  4a30a0
+0 0 4A3 -> 5
+curr addr =  49e110
+0 0 49E -> 6
+curr addr =  49e160
+0 0 49E -> 6
+curr addr =  44e4f8
+0 0 44E -> 7
+curr addr =  44e500
+0 0 44E -> 7
+curr addr =  744e520
+0 7 44E -> 8
+curr addr =  44e5a0
+0 7 44E -> 7
+curr addr =  388a65a0
+3 8 8A6 -> 9
+curr addr =  744edd0
+3 8 8A6 -> 8
+curr addr =  44e5e0
+3 8 8A6 -> 7
+curr addr =  703ff10
+0 7 3F -> A
+curr addr =  44e620
+0 7 3F -> 7
+curr addr =  1d496620
+1 D 496 -> B
+curr addr =  41f780
+0 0 41F -> 0
+curr addr =  41f740
+0 0 7FB -> 0
+curr addr =  11f5e2c0
+1 1 F5E -> 1
+curr addr =  5e78900
+0 5 E78 -> 2
+curr addr =  13270900
+1 3 270 -> 3
+curr addr =  4758a0
+0 0 475 -> 4
+curr addr =  4a30a0
+0 0 4A3 -> 5
+curr addr =  49e110
+0 0 49E -> 6
+curr addr =  49e160
+0 0 7FB -> 6
+curr addr =  44e4f8
+0 0 44E -> 7
+curr addr =  44e500
+0 0 7FB -> 7
+curr addr =  744e520
+0 7 44E -> 8
+curr addr =  44e5a0
+0 7 7FB -> 7
+curr addr =  388a65a0
+3 8 8A6 -> 9
+curr addr =  744edd0
+3 8 7FB -> 8
+curr addr =  44e5e0
+3 0 7FB -> 7
+curr addr =  703ff10
+0 7 3F -> A
+curr addr =  44e620
+0 7 7FB -> 7
+curr addr =  1d496620
+1 D 496 -> B

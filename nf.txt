@@ -1,0 +1,37 @@
+Bitmasks
+level 0 mask C0000000
+level 1 mask 03C000000
+level 2 mask 003800000
+level 3 mask 0007C0000
+0
+idx 0
+idx 1
+idx 2
+idx 3
+0
+idx 0
+idx 1
+idx 2
+idx 3
+idx 4
+idx 5
+idx 6
+idx 7
+idx 8
+idx 9
+idx 10
+idx 11
+idx 12
+idx 13
+idx 14
+idx 15
+0
+idx 0
+idx 1
+idx 2
+idx 3
+idx 4
+idx 5
+idx 6
+idx 7
+0
